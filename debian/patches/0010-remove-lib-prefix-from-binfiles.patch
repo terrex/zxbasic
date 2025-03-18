@@ -35,7 +35,7 @@ Last-Update: 2025-03-16
 -zxbasm = 'src.libzxbasm.zxbasm:main'
 -zxbpp = 'src.libzxbpp.zxbpp:entry_point'
 +zxb = 'src.zxbc.zxb:main'
-+zxbc = 'src.zxbc.zxb:main'
++zxbc = 'src.zxbc.zxbc:main'
 +zxbasm = 'src.zxbasm.zxbasm:main'
 +zxbpp = 'src.zxbpp.zxbpp:entry_point'
  
