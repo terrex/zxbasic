@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=zxbasic
+
+%:
+	dh $@ --buildsystem=pybuild
+
+override_dh_auto_test:
+	poetry run pytest
+
+override_dh_installman: debian/zxbc.1 debian/zxbasm.1 debian/zxbpp.1
+	dh_installman -O--buildsystem=pybuild
+
+debian/zxbc.1: debian/zxbc.md
+	lowdown -M title='zxbasic' -M date='July 26, 2025' -M section=1 -s -Tman -o debian/zxbc.1 debian/zxbc.md
+
+debian/zxbasm.1: debian/zxbasm.md
+	lowdown -M title='zxbasm' -M date='July 26, 2025' -M section=1 -s -Tman -o debian/zxbasm.1 debian/zxbasm.md
+
+debian/zxbpp.1: debian/zxbpp.md
+	lowdown -M title='zxbpp' -M date='July 26, 2025' -M section=1 -s -Tman -o debian/zxbpp.1 debian/zxbpp.md
+
+override_dh_auto_clean:
+	dh_auto_clean
+	$(RM) debian/zxbc.1 debian/zxbasm.1 debian/zxbpp.1 .coverage.*

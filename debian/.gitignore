@@ -1,0 +1,12 @@
+/*.substvars
+/.debhelper/
+/debhelper-build-stamp
+/files
+/tmp/
+/python3-zxbasic
+/python-zxbasic-doc
+/*.debhelper
+/zxbc.1
+/zxbasm.1
+/zxbpp.1
+/*.log
